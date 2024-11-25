@@ -1,0 +1,516 @@
+define muff = Character("Muff")
+define flashm = Character("Baby Muff")
+define gramps = Character("Grandpa Berg")
+define hare = Character("Cinnabunny")
+define host = Character("Hootie")
+define third = Character("Blubs")
+define scare = Character("???")
+
+
+
+label start:
+
+    scene bg comp
+    #beginning scene at the competition 
+    host "Welcome, my frozen friends, to the most chilling bake off yet"
+
+    show hootie happy
+    
+    host "I'm your host, Hootie, and this is The Great Artic Bake Off"
+    hide hootie happy
+    show point hootie
+    host "Let's meet our competitors:"
+    hide point hootie
+    show normal muff
+    host "Here we have Muff, a young penguin here to show everyone what him and his family has got"
+    hide normal muff
+    show normal bun
+    host "On this side, we have Cinnabunny, trying to keep his first place winning family legacy going"
+    hide normal bun
+    show normal blub
+    host "And finally, next to him is Blubs, this years new comer"
+    hide normal blub
+    show hootie happy
+    host "Good luck to everyone! This years theme is cakes."
+    host "You have four hours to bake and serve your family's favorite cake."
+    host "Only ONE will win."
+    host "Just remember not to use marshmallows..."
+    host "BLEH...I hate marshmallows!"
+    hide hootie happy
+
+    show normal muff
+    muff "Ok Muff. It is time to lock in. Let me think back to what Grandpa Berg has always taught me. But first..."
+    muff "Do I make Grandpa Berg's famous Tiramisu or Raspberry Chocolate Cake?"
+    hide normal muff
+
+    menu Cake_Choices:
+        "Which do I make?"
+
+        "Tiramisu":
+            $ Tiramisu = True
+            scene bg fb
+            hide normal muff
+            "Flashback..."
+            scene bg home
+            show muff gramps
+            gramps "Hello little Muff. One day I will be too old and chilly, and you are going to have to take over during the Great Arctic Baking Show."
+            gramps "I have tried for many years to win, but that silly Hare family always beats me. It will be up to you to perfect your
+            baking abilities and beat them."
+            gramps "I will teach you one of my prized recipies. Tiramisu."
+            hide muff gramps
+            scene bg kitchen
+            show g berg
+            gramps "It is very simple. Your Grandma Berg always requested this for Christmas every single year."
+            gramps "Most people THINK that you need Butter Fingers in order to make this delicious cake."
+            gramps "They are wrong. The secret ingredient for this cake is the lady fingers."
+            hide g berg
+            menu Fingers:
+                "wha... wha... A LADY'S FINGERS???":
+                    pass
+
+                "uhhh... I do not think that's sanitary...":
+                    pass
+            
+            show g berg
+            gramps "Silly muff. Not a lady's finger, Lady Fingers are biscuits! They just have a weird name because of the shape!"
+            gramps "Anywho..."
+            gramps "Use this and layer it with a mascarpone cheese layer for ultimate happiness."
+            flashm "What are the other things I would need, Grandpa Berg?"
+            show t ingred
+            gramps "Do not fret little muff. The other foods you need are the espresso, egg yolks, sugar, and cocoa powder."
+            
+            gramps "Mix it all together like this..."
+            hide t ingred
+            hide g berg
+            show mix mix
+            "Mix mix mix mix"
+            hide mix mix
+            show done t
+            gramps "Ta da!"
+            
+            menu TReaction:
+                "MMM that looks so yummy!":
+                    pass
+
+                "That smells so good!":
+                    pass
+            hide done t
+            show g berg
+            gramps "Yes little Muff! I am so excited for you to take that Hare family down. I do not understand how they always win..."
+            gramps "Oh well. You win some and you lose some. Just remember this recipe and make your penguin family proud!"
+            hide g berg
+            jump Choice_T
+
+        "Raspberry Chocolate Cake":
+            scene bg fb
+            hide normal muff
+            $ Raspberry = True
+            "Flashback..."
+            scene bg home
+            show muff gramps
+            gramps "Hello little Muff. One day I will be too old and chilly, and you are going to have to take over during the Great Arctic Baking Show."
+            gramps "I have tried for many years to win, but that silly Hare family always beats me. It will be up to you to perfect your
+            baking abilities and beat them."
+            gramps "I will teach you one of my prized recipies. Rasperry Chocolate Cake."
+            hide muff gramps
+            scene bg kitchen
+            show g berg
+            gramps "It is very simple. Your Grandma Berg always requested this for her birthday every single year."
+            gramps "Most people THINK that you need raspberry candies in order to make this delicious cake."
+            gramps "They are wrong. The secret ingredient for this cake is the homemade raspberry jam."
+            gramps "Use this and layer it with a heavy cream layer for ultimate happiness."
+            flashm "What are the other things I would need, Grandpa Berg?"
+            show t ingred
+            gramps "Do not fret little muff. The other foods you need are the flour, cocoa powder, eggs, butter, milk, and sugar."
+            gramps "Mix it all together like this..."
+            hide t ingred
+            hide g berg
+            show mix mix
+            "Mix mix mix mix"
+            hide mix mix
+            show done r
+            gramps "Ta da!"
+            hide done r
+            menu RReaction:
+                "MMM that looks so yummy!":
+                    pass
+
+                "That smells so good!":
+                    pass
+            show g berg
+            gramps "Yes little Muff! I am so excited for you to take that Hare family down. I do not understand how they always win..."
+            gramps "Oh well. You win some and you lose some. Just remember this recipe and make your penguin family proud!"
+            hide g berg
+            jump Choice_R
+
+    if Tiramisu == True:
+        jump Choice_T
+
+    else:
+        jump Choice_R
+
+label Choice_T:
+    scene bg fb
+    "Flashforward..."
+    scene bg comp
+
+    "Okay, now that I rememebered..."
+
+    show normal muff
+
+    muff "Grandpa Berg always told me that there are seven main parts to the perfect tiramisu..."
+            
+    menu T_ingreds:
+        "What were they?"
+
+        "Ladyfingers, mascarpone cheese, espresso, egg yolks, sugar, and cocoa powder":
+            $ Correct = True
+
+        "Butter Fingers, brie cheese, espresso, egg whites, salt, and cocoa powder":
+            $ Correct = False
+
+    if Correct == True:
+        jump meep
+    else :
+        jump meep
+
+    
+
+
+label Choice_R:
+    scene bg fb
+    "Flashforward..."
+    scene bg comp
+    show hmm muff
+    "Okay, now that I rememebered..."
+
+    muff "Grandpa Berg always told me that there are eight main parts to the perfect raspberry chocolate cake..."
+    hide hmm muff
+    menu R_ingreds:
+        "What were they?"
+
+        "Flour, cocoa powder, eggs, butter, milk, sugar, raspberry jam, and heavy cream":
+            $ Correct = True
+
+        "Flour, hot chocolate mix, eggs, butter, eggnog, salt, raspberry candies, and heavy cream":
+            $ Correct = False
+
+    if Correct == True:
+        jump Meep2
+    else :
+        jump Meep2
+
+
+label meep:
+    #tiramisu sabo
+    muff "Okay, I know that I can wow all the judges by making Grandpa Berg's Tiramisu. I wonder what that Arctic Hare is going to make..."
+    hide normall muff
+    show normal bun
+    hare "Okay Cinnabunny. It is my time to shine. I have to CRUSH those penguins. They cannot win!"
+    hide normal bun
+    show hootie happy
+    host "Okay... in 3.."
+    host "2.."
+    hide hootie happy
+    show point hootie
+    host "1... GO!!!"
+    hide point hootie
+    show normal bun
+
+    hare "Oh hey there Muff..."
+    hare "You might as well leave now, because I am going to win..."
+    hide normal bun
+    muff "I wouldn't be so sure about that..."
+
+    third "pssst"
+    third "PSSST"
+    show hmm muff
+    muff "Huh?"
+    hide hmm muff
+    show normal blub
+    third "Muff. Every year the Arctic Hare's sabotage you and put marshmallows in your dessert before judging!"
+    third "Lucky for you, I am willing to sabotage them back..."
+    third "But ONLY if YOU help me"
+    hide normal blub
+
+    menu Sabotage1:
+        "I don't know... What do I do?"
+
+        "Sabotage the Hares! They deserve it":
+            muff "okay. I am in"
+            jump Sabotage_Hare
+
+        "Stay true to yourself and don't do it":
+            muff "uhhh...no thanks..."
+            jump NoSabo
+
+
+label Meep2:
+    #rasp cake sabo
+    muff "Okay, I know that I can wow all the judges by making Grandpa Berg's Raspberry Chocolate Cake. I wonder what that Arctic Hare is going to make..."
+    hide normall muff
+    show normal bun
+    hare "Okay Cinnabunny. It is my time to shine. I have to CRUSH those penguins. They cannot win!"
+    hide normal bun
+    show hootie happy
+    host "Okay... in 3.."
+    host "2.."
+    hide hootie happy
+    show point hootie
+    host "1... GO!!!"
+    hide point hootie
+    show normal bun
+    hare "Oh hey there Muff..."
+    hare "You might as well leave now, because I am going to win..."
+    hide normal bun
+    muff "I wouldn't be so sure about that..."
+
+    third "pssst"
+    third "PSSST"
+    show hmm muff
+    muff "Huh?"
+    hide hmm muff
+    show scared blub
+    third "Muff. Every year the Arctic Hare's sabotage you and put marshmallows in your dessert before judging!"
+    third "Lucky for you, I am willing to sabotage them back..."
+    third "But ONLY if YOU help me"
+    hide scared blub
+
+    menu Sabotage2:
+        "I don't know... What do I do?"
+
+        "Sabotage the Hares! They deserve it":
+            muff "okay. I am in"
+
+            jump Sabotage_Hare
+
+        "Stay true to yourself and don't do it":
+            muff "uhhh...no thanks..."
+
+            jump NoSabo
+
+
+label Sabotage_Hare:
+    show happy blub
+    third "Excellent! I knew that I would convince you!"
+    third "Here is the plan..."
+    third "Make your cake as you usually do"
+    third "Everyone knows that Hare's are scared of loud noises"
+    third "Right when Cinnabunny is about to place his cake on the judging block"
+    third "You will hide behind the drape and yell into the microphone!"
+    third "It will scare him and he will be sure to drop the cake!"
+    hide happy blub
+    show normal muff
+    muff "Won't they catch me?"
+    hide normal muff
+    show happy blub
+    third "No no... It will be fine."
+    hide happy blub
+    show normal muff
+    muff "If you say so..."
+
+    muff "Okay I really need to get started."
+    muff "I need the cocoa powder...the sugar..."
+    hide normal muff
+
+    show mix mix
+    muff "Okay mix mix mix"
+    hide mix mix 
+    muff "Now into the oven..."
+    show hootie happy
+    host "TIME. Cakes are in the oven and we will be back at the judging block!"
+    hide hootie happy
+    show normal blub
+    third "Are you ready muff? You remember the plan?"
+    hide normal blub
+    show happy muff
+    muff "Yes... Right when Cinnabunny is walking I will yell!"
+    hide happy muff
+    show scared blub
+    third "Perfect. Go get set up"
+    hide scared blub
+    show point hootie
+    host "Okay. Starting with Cinnabunny, please bring your cake to me"
+    hide point hootie
+    show normal bun
+    hare "Hello Hootie! Here is my famous carrot ca-"
+    hide normal bun
+    scare "RAHHHHHHHH"
+    hare "AHHHH *SPLAT*"
+    show angry bun
+    hare "NO! MY CAKE! WHO WAS THAT"
+    hide angry bun
+    show hootie happy
+    host "YIKES! No cake means no win..."
+    hide hootie happy
+    show angry bun
+    hare "No! Who was that!?"
+    hide angry bun
+    show scared blub
+    third "GASP! I think it was behind that curtain!"
+    hide scared blub
+    scare "Wait! What are you doing!"
+    "FLASH"
+    show point hootie
+    host "Muff!?"
+    hide point hootie
+    show hmm muff
+    muff "Wha... No... I-"
+    hide hmm muff
+    show sad muff
+    muff "It was Blub's idea!"
+    hide sad muff
+    show angry blub
+    third "WHAT!? I would NEVER tell someone to do that..."
+    hide angry blub
+    show point hootie
+    host "Looks like Muff is disqualified! And... Cinnabunny doesn't have a cake..."
+    host "AND BLUBS IS THE WINNER!"
+    "WHAT"
+    hide point hootie
+    show happy blub
+    third "Wow... I mean wow thank you. Thank you to everyone!"
+    hide happy blub
+    show point hootie
+    host "And that concludes our show...I guess..."
+    hide point hootie
+    show angry bun
+    hare "You all will regret this. Especially YOU Muff."
+    hide angry bun
+    show hootie happy
+    host "Thank you for playing...er...I mean watching!"
+    
+    return
+    
+
+
+label NoSabo:
+    show angry blub
+    third "Okay, that's your loss. Hope you have fun loosing again..."
+    hide angry blub
+    show hmm muff
+    muff "That was crazy!"
+    muff "I will have to watch and make sure the Hare's do not sabotage me this year!"
+    hide hmm muff
+    show normal muff
+    muff "Okay I really need to get started."
+    muff "I need the cocoa powder...the sugar..."
+    muff "And I will keep an eye out for the Hare and the marshmallows"
+    hide normal muff
+
+    show mix mix
+    muff "Okay mix mix mix"
+    hide mix mix 
+    muff "Now into the oven..."
+    muff "Great! I made my cake and did not let Cinnabunny sabotage me!"
+    show hootie happy
+    host "TIME. Cakes are in the oven and we will be back at the judging block!"
+    hide hootie happy
+    jump winorlose
+
+label winorlose:
+
+    if Correct == True:
+        jump win
+
+    else:
+        jump lose
+
+label win:
+    show hootie happy
+    host "Alright...the time that everyone has been waiting for..."
+    host "Cinnabunny, come show us what you have made"
+    hide hootie happy
+    show normal bun
+    hare "Hellow Hootie! I have made my famous carrot cake!"
+    host "nom nom nom... it is okay... a little dry..."
+    hide normal bun
+    show angry bun
+    host "NEXT"
+    hide angry bun
+    show normal blub
+    host "Okay Blubs... what did you make?"
+    third "I made my famous fish cake!"
+    hide normal blub
+    show angry blub
+    host "Ew...this smells and tastes gross..."
+    hide angry blub
+    host "Okay Muff, your turn!"
+    show normal muff
+    muff "I made my Grandpa Berg's famous cake!"
+    host "Wow...this is the best cake I have ever tasted!"
+    host "Muff you win!"
+    hide normal muff
+    hide point hootie
+    show happy muff
+    muff "Really??? Thank you!"
+    hide happy muff
+    show muff bun
+    hare "Good job Muff... I guess you deserved the win this year..."
+    muff "Thank you! Do not worry, you'll get them next year!"
+    hide muff bun
+    show hootie happy
+    host "And that concludes our show!"
+    host "Thank you for playing...er...I mean watching!"
+
+    return
+
+label lose:
+    show hootie happy
+    host "Alright...the time that everyone has been waiting for..."
+    host "Cinnabunny, come show us what you have made"
+    hide hootie happy
+    show normal bun
+    hare "Hellow Hootie! I have made my famous carrot cake!"
+    host "nom nom nom... wow this is delicious!"
+    hide normal bun
+    show happy bun
+    host "NEXT"
+    hide happy bun
+    show normal blub
+    host "Okay Blubs... what did you make?"
+    third "I made my famous fish cake!"
+    hide normal blub
+    show angry blub
+    host "Ew...this smells and tastes gross..."
+    hide angry blub
+    host "Okay Muff, your turn!"
+    show normal muff
+    muff "I made my Grandpa Berg's famous cake!"
+    hide normal mudd
+    show hootie happy
+    host "nom nom nom...wait"
+    host "What even is in here..."
+    host "This is digusting..."
+    hide hootie happy
+    show sad muff
+    muff "Oh no...did I mess up the ingredients????"
+    hide sad muff
+    show hootie happy
+    host "That or you are not very good at this..."
+    hide hootie happy
+    show point hootie
+    host "Cinnabunny... you win!"
+    hide point hootie
+    show happy bun
+    hare "Really??? Thank you!"
+    hare "Muff... I told you I was going to win!"
+    hide happy bun
+    show hootie happy
+    host "And that concludes our show!"
+    host "Thank you for playing...er...I mean watching!"
+
+    return
+    
+
+
+
+
+        
+
+        
+
+
+
+
+    
