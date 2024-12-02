@@ -10,6 +10,7 @@ define scare = Character("???")
 
 label start:
 
+    play music "music.mp3"
     scene bg comp
     #beginning scene at the competition 
     host "Welcome, my frozen friends, to the most chilling bake off yet"
@@ -366,6 +367,7 @@ label Sabotage_Hare:
     show point hootie
     host "Looks like Muff is disqualified! And... Cinnabunny doesn't have a cake..."
     host "AND BLUBS IS THE WINNER!"
+    play sound "clap.mp3"
     "WHAT"
     hide point hootie
     show happy blub
@@ -440,6 +442,7 @@ label win:
     muff "I made my Grandpa Berg's famous cake!"
     host "Wow...this is the best cake I have ever tasted!"
     host "Muff you win!"
+    play sound "applause.mp3"
     hide normal muff
     hide point hootie
     show happy muff
@@ -504,7 +507,13 @@ label lose:
     
 
 
-
+#Colorful Flowers by Tokyo Music Walker | https://soundcloud.com/user-356546060
+#Music promoted by https://www.chosic.com/free-music/all/
+#Creative Commons CC BY 3.0
+#https://creativecommons.org/licenses/by/3.0/
+#Music: https://www.chosic.com/free-music/all/ 
+#Music: https://www.chosic.com/free-music/all/ 
+ 
 
         
 
