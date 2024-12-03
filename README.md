@@ -1,3 +1,2 @@
 # Capstone
-These are the files for my senior captsone project for the Concordia University Computer Science Department. In order to view,
-the user does need to download the renpy application found at https://www.renpy.org.
+These are the files for my senior captsone project for the Concordia University Computer Science Department. Images and audio found in corresponding labeled folders. The script.rpy file has the main code which can be run on a code runner (I specifically used Visual Studio Code). The gui.rpy, options.rpy, and screens.rpy are also run for the game to make the buttons and screens. Users must download Renpy at https://www.renpy.org/. 
